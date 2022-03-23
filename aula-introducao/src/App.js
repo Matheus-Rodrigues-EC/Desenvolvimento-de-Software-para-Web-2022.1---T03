@@ -2,7 +2,12 @@ import './App.css';
 //import { Component, React } from 'react';
 //import MeusDados from './Components/MeusDados';
 //import MeusDadosProps from './Components/MeusDadosProps';
-import Informacoes from './Components/Informacoes';
+//import Informacoes from './Components/Informacoes';
+
+//import Questao1 from './Components/Atividade_1/Questao1';
+//import Questao2 from './Components/Atividade_1/Questao2';
+//import Questao3 from './Components/Atividade_1/Questao3';
+import Questao4 from './Components/Atividade_1/Questao4';
 
 /*function App(){
   return(
@@ -20,7 +25,7 @@ import Informacoes from './Components/Informacoes';
 function App(){
   return(
     <div className='App'>
-      <Informacoes/>
+      <Questao4/>
     </div>
     
   )
@@ -28,6 +33,7 @@ function App(){
 
 
 // Criando uma função clássica 
+
 /*function App() {
   return (
     <div className="App">
