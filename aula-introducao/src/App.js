@@ -7,7 +7,10 @@ import './App.css';
 //import Questao1 from './Components/Atividade_1/Questao1';
 //import Questao2 from './Components/Atividade_1/Questao2';
 //import Questao3 from './Components/Atividade_1/Questao3';
-import Questao4 from './Components/Atividade_1/Questao4';
+//import Questao4 from './Components/Atividade_1/Questao4';
+//import IMC from './Components/Atividade_2__IMC/IMC';
+//import CidadeSimples from './Components/Cidades/CidadeSimples';
+import CidadeComClasse from './Components/Cidades/CidadeComClasse';
 
 /*function App(){
   return(
@@ -25,7 +28,7 @@ import Questao4 from './Components/Atividade_1/Questao4';
 function App(){
   return(
     <div className='App'>
-      <Questao4/>
+      <CidadeComClasse/>
     </div>
     
   )
