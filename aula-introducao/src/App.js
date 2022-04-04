@@ -10,7 +10,12 @@ import './App.css';
 //import Questao4 from './Components/Atividade_1/Questao4';
 //import IMC from './Components/Atividade_2__IMC/IMC';
 //import CidadeSimples from './Components/Cidades/CidadeSimples';
-import CidadeComClasse from './Components/Cidades/CidadeComClasse';
+//import CidadeComClasse from './Components/Cidades/CidadeComClasse';
+import World from './Components/Atividade_2/Questao1/World';
+import Arena from './Components/Atividade_2/Questao1/Arena';
+import MyHero from './Components/Atividade_2/Questao1/MyHero';
+import MyEnemy from './Components/Atividade_2/Questao1/MyEnemy';
+
 
 /*function App(){
   return(
@@ -28,7 +33,12 @@ import CidadeComClasse from './Components/Cidades/CidadeComClasse';
 function App(){
   return(
     <div className='App'>
-      <CidadeComClasse/>
+      <World>
+        <Arena ArenaName = 'Distrito da Luz'>
+          <MyHero HeroName = "Uzui Tengen"/>
+          <MyEnemy EnemyName = "Gyutaro"/>
+        </Arena>
+      </World>
     </div>
     
   )
