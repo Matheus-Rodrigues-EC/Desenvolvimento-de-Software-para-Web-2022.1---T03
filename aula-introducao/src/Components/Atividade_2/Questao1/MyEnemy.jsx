@@ -1,6 +1,5 @@
 import React from "react";
 import Gyutaro from "./IMG/quem-e-gyutaro-em-demon-slayer-personagem-e-dublador-explicados.jpg"
-import SFJF from "./IMG/"
 
 const MyEnemy = (props) =>{
     const {EnemyName} = props;
