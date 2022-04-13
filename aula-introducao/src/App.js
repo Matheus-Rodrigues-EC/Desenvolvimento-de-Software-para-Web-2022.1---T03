@@ -21,8 +21,12 @@ import { Routes, Route, Link } from 'react-router-dom';
 //import ContadorClass from './Components/Aula_06_04/ContadorClass';
 import About from './Components/Aula_11-04/About';
 import Home from './Components/Aula_11-04/Home';
-import Page1 from './Components/Aula_11-04/Page1';
-import Page2 from './Components/Aula_11-04/Page2';
+//import Page1 from './Components/Aula_11-04/Page1';
+//import Page2 from './Components/Aula_11-04/Page2';
+import CreateStudent from './Components/Aula_13-04/CRUD/Student/CreateStudent';
+import EditStudent from './Components/Aula_13-04/CRUD/Student/EditStudent';
+import ListStudent from './Components/Aula_13-04/CRUD/Student/ListStudent';
+
 
 //Utilizando rotas
 function App(){
@@ -44,12 +48,13 @@ function App(){
             </li>
 
             <li className="navitem">
-              <Link to="page1" className="nav-link"> Page 1 </Link>
+              <Link to="CreateStudent" className="nav-link"> Criar Estudante </Link>
             </li>
 
             <li className="navitem">
-              <Link to="page2/Matt/1179" className="nav-link"> Page 2 </Link>
+              <Link to="ListStudent" className="nav-link"> Listar Estudante </Link>
             </li>
+            
           </ul>
         </div>
 
@@ -57,8 +62,9 @@ function App(){
       <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='about' element={<About/>} />
-          <Route path='page1' element={<Page1/>} />
-          <Route path='page2/:nome/:id' element={<Page2/>} />
+          <Route path='CreateStudent' element={<CreateStudent/>} />
+          <Route path='ListStudent/' element={<ListStudent/>} />
+          <Route path='EditStudent/:id' element={<EditStudent/>} />
         </Routes>
     </div>
     
