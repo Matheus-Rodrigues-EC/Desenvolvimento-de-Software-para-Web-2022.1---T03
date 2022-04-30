@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {students} from "./data.js";
 import { useParams } from 'react-router-dom';
 
-const CreateStudent = () =>{
+const EditStudent = () =>{
 
     const [name, setName] = useState("");
     const [course, setCourse] = useState("");
@@ -16,7 +16,7 @@ const CreateStudent = () =>{
             setName(student.name)
             setCourse(student.course)
             setIra(student.ira)
-        }
+        }, [params.id]
     )
 
     const handleSubmit = (event) => {
@@ -29,7 +29,7 @@ const CreateStudent = () =>{
 
     return(
         <div>
-            <h2>CreatStudent</h2>
+            <h2>Edit Student</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group" >
                     <label>Nome: </label>
@@ -59,11 +59,11 @@ const CreateStudent = () =>{
                     />
                 </div>
                 <div className="form-group" style={{paddingTop:10}} >
-                    <input type="submit" value="Criar Estudante" className="btn btn-primary" />
+                    <input type="submit" value="Editar Estudante" className="btn btn-primary" />
                 </div>
             </form>
         </div>
     )
 }
 
-export default CreateStudent;
+export default EditStudent;

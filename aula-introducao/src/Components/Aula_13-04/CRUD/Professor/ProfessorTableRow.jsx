@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-const StudentTableRow = (props) =>{
-    const {id, name, course, ira} = props.students;
+const ProfessorTableRow = (props) =>{
+    const {id, name, university, degree} = props.professors;
     return(
         <tr>
             <td>
@@ -12,19 +12,19 @@ const StudentTableRow = (props) =>{
                 {name}
             </td>
             <td>
-                {course}
+                {university}
             </td>
             <td>
-                {ira}
+                {degree}
             </td>
             <td>
-                <Link to={`/EditStudent/${id}`} className="btn btn-warning">Editar</Link>
+                <Link to={`/EditProfessor/${id}`} className="btn btn-warning">Editar</Link>
             </td>
             <td>
-                <Link to={`/EditStudent/${id}`} className="btn btn-danger">Apagar</Link>
+                <Link to={`/EditProfessor/${id}`} className="btn btn-danger">Apagar</Link>
             </td>
         </tr>
     )
 }
 
-export default StudentTableRow;
+export default ProfessorTableRow;

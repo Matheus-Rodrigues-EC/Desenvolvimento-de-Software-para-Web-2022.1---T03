@@ -2,6 +2,8 @@ import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { Routes, Route, Link } from 'react-router-dom';
 //import { Component, React } from 'react';
+import { Dropdown, NavItem, NavLink } from "react-bootstrap";
+
 
 //import MeusDados from './Components/MeusDados';
 //import MeusDadosProps from './Components/MeusDadosProps';
@@ -23,48 +25,82 @@ import About from './Components/Aula_11-04/About';
 import Home from './Components/Aula_11-04/Home';
 //import Page1 from './Components/Aula_11-04/Page1';
 //import Page2 from './Components/Aula_11-04/Page2';
+import UFC from "./Components/Aula_13-04/IMG/UNIVERSIDADE FEDERAL DO CEARÁ.png"
 import CreateStudent from './Components/Aula_13-04/CRUD/Student/CreateStudent';
 import EditStudent from './Components/Aula_13-04/CRUD/Student/EditStudent';
 import ListStudent from './Components/Aula_13-04/CRUD/Student/ListStudent';
+import CreateProfessor from './Components/Aula_13-04/CRUD/Professor/CreateProfessor';
+import ListProfessor from './Components/Aula_13-04/CRUD/Professor/ListProfessor';
+import EditProfessor from './Components/Aula_13-04/CRUD/Professor/EditProfessor';
+import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
-
+//<img src={UFC} alt="Logo Universidade Federal do Ceará"/>
 //Utilizando rotas
 function App(){
   return(
-    <div className='container'>
+    <div className='container '>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-        <Link to="/" className="navbar-brand" style={{paddingLeft:20}}>
-          UFC
-        </Link>
+        <div className="container-fluid ">
+          <Link to="/" className="navbar-brand" style={{paddingLeft:5, paddingRight:10}}>
+            <img src={UFC} alt="Logo Universidade Federal do Ceará" style={{width:100}}/>
+          </Link>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="navitem">
-              <Link to="/" className="nav-link"> Home </Link>
-            </li>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul className="navbar-nav mr-auto">
 
-            <li className="navitem">
-              <Link to="about" className="nav-link"> About </Link>
-            </li>
+              <li className="navitem">
+                <Link to="/" className="nav-link"> Home </Link>
+              </li>
 
-            <li className="navitem">
-              <Link to="CreateStudent" className="nav-link"> Criar Estudante </Link>
-            </li>
+              <li className="navitem">
+                <Link to="Sobre" className="nav-link"> Sobre </Link>
+              </li>
 
-            <li className="navitem">
-              <Link to="ListStudent" className="nav-link"> Listar Estudante </Link>
-            </li>
-            
-          </ul>
+              <Dropdown as={NavItem}>
+                <Dropdown.Toggle as={NavLink} >
+                  Estudante
+                </Dropdown.Toggle>
+
+                <DropdownMenu className='bg-dark'>
+                  <DropdownItem className='navbar-dark bg-dark'>
+                    <Link to="CreateStudent" className="nav-link">Criar Estudante</Link>
+                  </DropdownItem>
+                  <DropdownItem className='navbar-dark bg-dark'>
+                    <Link to="ListStudent" className="nav-link">Listar Estudantes</Link>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+
+              <Dropdown as={NavItem}>
+                <Dropdown.Toggle as={NavLink}>
+                  Professor
+                </Dropdown.Toggle>
+
+                <DropdownMenu className='bg-dark'>
+                  <DropdownItem className='navbar-dark bg-dark'>
+                    <Link to="CreateProfessor" className="nav-link">Criar Professor</Link>
+                  </DropdownItem>
+                  <DropdownItem className='navbar-dark bg-dark'>
+                    <Link to="ListProfessor" className="nav-link">Listar Professores</Link>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+              
+              
+            </ul>
+          </div>
         </div>
-
       </nav>
       <Routes>
           <Route path='/' element={<Home/>} />
-          <Route path='about' element={<About/>} />
+          <Route path='Sobre' element={<About/>} />
           <Route path='CreateStudent' element={<CreateStudent/>} />
           <Route path='ListStudent/' element={<ListStudent/>} />
           <Route path='EditStudent/:id' element={<EditStudent/>} />
+          <Route path='CreateProfessor' element={<CreateProfessor/>} />
+          <Route path='ListProfessor/' element={<ListProfessor/>} />
+          <Route path='EditProfessor/:id' element={<EditProfessor/>} />
         </Routes>
     </div>
     

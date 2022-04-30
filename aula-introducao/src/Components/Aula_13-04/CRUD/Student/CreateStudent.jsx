@@ -16,7 +16,7 @@ const CreateStudent = () =>{
 
     return(
         <div>
-            <h2>CreatStudent</h2>
+            <h2>Create Student</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group" >
                     <label>Nome: </label>

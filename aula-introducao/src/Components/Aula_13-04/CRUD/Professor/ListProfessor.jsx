@@ -1,26 +1,26 @@
 import React from "react";
-import { students } from "./data.js";
-import StudentTableRow from "./StudentTableRow";
+import { professors } from "./data.js";
+import ProfessorTableRow from "./ProfessorTableRow";
 
-const ListStudent = () =>{
+const ListProfessor = () =>{
 
     function generateTable(){
-        if(students==null) return
-        return students.map((student, i) =>{
-            return <StudentTableRow students={student} key={i} />
+        if(professors==null) return
+        return professors.map((professor, i) =>{
+            return <ProfessorTableRow professors={professor} key={i} />
             }
         )
     }
 
     return(
         <div>
-            <h2>List Student</h2>
+            <h2>List Professor</h2>
             <table className="table table-striped">
                 <thead>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Curso</th>
-                    <th>IRA</th>
+                    <th>Universidade</th>
+                    <th>Título</th>
                     <th colSpan="2"></th>
                 </thead>
                 <tbody>
@@ -31,4 +31,4 @@ const ListStudent = () =>{
     )
 }
 
-export default ListStudent;
+export default ListProfessor;
