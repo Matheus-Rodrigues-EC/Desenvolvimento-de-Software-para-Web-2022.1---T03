@@ -1,6 +1,5 @@
 import React from 'react';
-import UFC_FOR from "./../Aula_13-04/CRUD/IMG/Universidade_Federal_do_Ceará_fortal.png";
-//import UFC_QXD from "./../Aula_13-04/IMG/Universidade_Federal_do_Ceará_QXD.jpeg";
+import UFC_FOR from "../Crud/IMG/Universidade_Federal_do_Ceará_fortal.png";
 
 const About = () => {
     return(

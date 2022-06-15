@@ -1,39 +1,19 @@
 import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { Routes, Route, Link } from 'react-router-dom';
-//import { Component, React } from 'react';
 import { Dropdown, NavItem, NavLink } from "react-bootstrap";
 
-
-//import MeusDados from './Components/MeusDados';
-//import MeusDadosProps from './Components/MeusDadosProps';
-//import Informacoes from './Components/Informacoes';
-//import Questao1 from './Components/Atividade_1/Questao1';
-//import Questao2 from './Components/Atividade_1/Questao2';
-//import Questao3 from './Components/Atividade_1/Questao3';
-//import Questao4 from './Components/Atividade_1/Questao4';
-//import IMC from './Components/Atividade_2__IMC/IMC';
-//import CidadeSimples from './Components/Cidades/CidadeSimples';
-//import CidadeComClasse from './Components/Cidades/CidadeComClasse';
-//import World from './Components/Atividade_2/Questao1/World';
-//import Arena from './Components/Atividade_2/Questao1/Arena';
-//import MyHero from './Components/Atividade_2/Questao1/MyHero';
-//import MyEnemy from './Components/Atividade_2/Questao1/MyEnemy';
-//import Contador from './Components/Aula_06_04/Contador';
-//import ContadorClass from './Components/Aula_06_04/ContadorClass';
-import About from './Components/Aula_11-04/About';
-import Home from './Components/Aula_11-04/Home';
-//import Page1 from './Components/Aula_11-04/Page1';
-//import Page2 from './Components/Aula_11-04/Page2';
-import UFC from "./Components/Aula_13-04/CRUD/IMG/UFC_brasao.png"
-import CreateStudent from './Components/Aula_13-04/CRUD/Student/CreateStudent';
-import EditStudent from './Components/Aula_13-04/CRUD/Student/EditStudent';
-import ListStudent from './Components/Aula_13-04/CRUD/Student/ListStudent';
-import CreateProfessor from './Components/Aula_13-04/CRUD/Professor/CreateProfessor';
-import ListProfessor from './Components/Aula_13-04/CRUD/Professor/ListProfessor';
-import EditProfessor from './Components/Aula_13-04/CRUD/Professor/EditProfessor';
-import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import About from './Components/Atividade_03/About';                                        // Componente da Atividade_03
+import Home from './Components/Atividade_03/Home';                                          // Componente da Atividade_03
+import UFC from "./Components/Atividade_03/CRUD/IMG/UFC_brasao.png";                        // Componente da Atividade_03
+import CreateStudent from './Components/Atividade_03/CRUD/Student/CreateStudent';           // Componente da Atividade_03
+import EditStudent from './Components/Atividade_03/CRUD/Student/EditStudent';               // Componente da Atividade_03
+import ListStudent from './Components/Atividade_03/CRUD/Student/ListStudent';               // Componente da Atividade_03
+import CreateProfessor from './Components/Atividade_03/CRUD/Professor/CreateProfessor';     // Componente da Atividade_03
+import ListProfessor from './Components/Atividade_03/CRUD/Professor/ListProfessor';         // Componente da Atividade_03
+import EditProfessor from './Components/Atividade_03/CRUD/Professor/EditProfessor';         // Componente da Atividade_03
+import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';                                // Componente da Atividade_03
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';                                // Componente da Atividade_03
 
 //<img src={UFC} alt="Logo Universidade Federal do Ceará"/>
 //Utilizando rotas
@@ -108,41 +88,5 @@ function App(){
   )
 }
 
-
-// Criando uma função clássica 
-
-/*function App() {
-  return (
-    <div className="App">
-      <h1>Hello World!</h1>
-      <MeusDados/>
-    </div>
-  );
-}*/
-
-// Constante que recebe uma função Arrow
-/*const App = ( ) =>{
-    return (<div className="App">
-            <h1>Hello World!</h1>
-            </div>
-            );
- }*/
-
-// Constante que recebe Arrow function de uma só linha
-/*const App = ( ) =>
-          <div className="App">
-          <h1>Hello World!</h1>
-          </div>
-*/
-
-/*class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello World!</h1>
-      </div>
-    );
-  }
-}*/
 
 export default App;
