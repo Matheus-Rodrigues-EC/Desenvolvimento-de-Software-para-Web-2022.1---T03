@@ -1,10 +1,9 @@
 const students = [
-    {id: 0, name:"Jefferson de Carvalho", course: "Sistemas de Informação", ira: 6.7},
-    {id: 1, name:"Juan David", course: "Engenharia de Computação", ira: 7.8},
-    {id: 2, name:"Sarah Soares", course: "Sistemas de Informação", ira: 8.4},
-    {id: 3, name:"Matt Rodrigues", course: "Engenharia de Computação", ira: 7.2}
+    {_id: 0, name:"Daemon Salvatore", course: "Engenharia de Computação", ira: 9.7},
+    {_id: 1, name:"Stefan Salvatore", course: "Ciências da Computação", ira: 7.8},
+    {_id: 2, name:"Carlisle Cullin", course: "Sistemas de Informação", ira: 10},
+    {_id: 3, name:"Matt Rodrigues", course: "Engenharia de Computação", ira: 7.2}
 ]
 
-const PI = 3.14;
 
-export {students, PI}
+export default students

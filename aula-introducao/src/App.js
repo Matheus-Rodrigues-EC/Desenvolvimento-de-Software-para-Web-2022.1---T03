@@ -25,7 +25,7 @@ import About from './Components/Aula_11-04/About';
 import Home from './Components/Aula_11-04/Home';
 //import Page1 from './Components/Aula_11-04/Page1';
 //import Page2 from './Components/Aula_11-04/Page2';
-import UFC from "./Components/Aula_13-04/IMG/UNIVERSIDADE FEDERAL DO CEARÁ.png"
+import UFC from "./Components/Aula_13-04/CRUD/IMG/UFC_brasao.png"
 import CreateStudent from './Components/Aula_13-04/CRUD/Student/CreateStudent';
 import EditStudent from './Components/Aula_13-04/CRUD/Student/EditStudent';
 import ListStudent from './Components/Aula_13-04/CRUD/Student/ListStudent';
@@ -69,6 +69,7 @@ function App(){
                   <DropdownItem className='navbar-dark bg-dark'>
                     <Link to="ListStudent" className="nav-link">Listar Estudantes</Link>
                   </DropdownItem>
+                  
                 </DropdownMenu>
               </Dropdown>
 
@@ -97,10 +98,10 @@ function App(){
           <Route path='Sobre' element={<About/>} />
           <Route path='CreateStudent' element={<CreateStudent/>} />
           <Route path='ListStudent/' element={<ListStudent/>} />
-          <Route path='EditStudent/:id' element={<EditStudent/>} />
+          <Route path='EditStudent/:_id' element={<EditStudent/>} />
           <Route path='CreateProfessor' element={<CreateProfessor/>} />
           <Route path='ListProfessor/' element={<ListProfessor/>} />
-          <Route path='EditProfessor/:id' element={<EditProfessor/>} />
+          <Route path='EditProfessor/:_id' element={<EditProfessor/>} />
         </Routes>
     </div>
     

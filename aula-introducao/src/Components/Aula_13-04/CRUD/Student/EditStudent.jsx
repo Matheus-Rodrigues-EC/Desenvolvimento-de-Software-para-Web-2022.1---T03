@@ -1,30 +1,44 @@
 import React, { useState, useEffect } from "react";
-import {students} from "./data.js";
-import { useParams } from 'react-router-dom';
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
-const EditStudent = () =>{
+const EditStudent = (props) =>{
 
-    const [name, setName] = useState("");
-    const [course, setCourse] = useState("");
-    const [ira, setIra] = useState();
-
+    const student = useState([]);
     const params = useParams();
-
-    useEffect(
-        ()=>{
-            const student = students[params.id]
-            setName(student.name)
-            setCourse(student.course)
-            setIra(student.ira)
-        }, [params.id]
-    )
+    const navigate = useNavigate();
+    const [name, setName] = useState(student.name);
+    const [course, setCourse] = useState(student.course);
+    const [ira, setIra] = useState(student.ira);
 
     const handleSubmit = (event) => {
-        //aqui é o código de comunicação com o Backend
-        alert(` Nome: ${name}
-                Curso: ${course}
-                IRA: ${ira}`)
-    }
+        event.preventDefault();
+        let updatedStudent = {
+            name,
+            course,
+            ira,
+        };
+        axios.put(`http://localhost:3002/students/update/${params._id}`, updatedStudent)
+            .then((res) => {
+                navigate('/ListStudent', {
+                    message: `Estudante editado com sucesso!`,
+                });
+                
+            })
+            .catch((err) => console.log(err));
+    };
+ 
+    useEffect(() => {
+        axios
+            .get(`http://localhost:3002/students/retrieve/${params._id}`)
+            .then((res) => {
+                setName(res.data.name);
+                setCourse(res.data.course);
+                setIra(res.data.ira);
+
+            })
+            .catch((err) => console.log(err));
+    }, [params._id]);
 
 
     return(

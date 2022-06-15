@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const CreateStudent = () =>{
 
@@ -6,11 +8,32 @@ const CreateStudent = () =>{
     const [course, setCourse] = useState("");
     const [ira, setIra] = useState(0);
 
+    const navigate = useNavigate();
+    
+    function handleChageName(e){
+        setName(e.target.value);
+    }
+
+    function handleChangeCourse(e){
+        setCourse(e.target.value);
+    }
+
+    function handleChangeIra(e){
+        setIra(e.target.value);
+    }
+
     const handleSubmit = (event) => {
         //aqui é o código de comunicação com o Backend
-        alert(` Nome: ${name}
-                Curso: ${course}
-                IRA: ${ira}`)
+        event.preventDefault();
+        const student = { name: name, ira: ira, course: course };
+
+        axios.post('http://localhost:3002/students/create', student)
+        .then((res)=> {
+            navigate('/ListStudent', {
+                message: `Cadastro bem sucedido!`,
+            });
+        })
+        .catch((erro) => console.log(erro));
     }
 
 
@@ -24,7 +47,7 @@ const CreateStudent = () =>{
                             className="form-control"
                             value={(name == null || name === undefined) ? "" : name}
                             name="name"
-                            onChange={(event) => setName(event.target.value)}
+                            onChange={handleChageName}
                     />
                 </div>
                 <div className="form-group" >
@@ -33,7 +56,7 @@ const CreateStudent = () =>{
                             className="form-control"
                             value={(course == null || course === undefined) ? "" : course}
                             name="course"
-                            onChange={(event) => setCourse(event.target.value)}
+                            onChange={handleChangeCourse}
                     />
                 </div>
                 <div className="form-group" >
@@ -42,7 +65,7 @@ const CreateStudent = () =>{
                             className="form-control"
                             value={ira ?? 0}
                             name="ira"
-                            onChange={(event) => setIra(event.target.value)}
+                            onChange={handleChangeIra}
                     />
                 </div>
                 <div className="form-group" style={{paddingTop:10}} >

@@ -1,12 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import axios from "axios";
 
-const StudentTableRow = (props) =>{
-    const {id, name, course, ira} = props.students;
+function StudentTableRow({student: { _id, name, course, ira }, deleteStudentById}){
+
+    function deleteStudent(){
+        if(window.confirm(`Você deseja excluir o estudante ${name} ?`))
+        axios.delete(`http://localhost:3002/students/delete/${_id}`)
+        .then(()=> {
+            console.log(`O registro do Aluno ${name}, de ID ${_id} foi excluído com sucesso.`);
+            deleteStudentById(_id);
+        })
+        .catch((erro)=> console.log(erro));
+    };
+
     return(
         <tr>
             <td>
-                {id}
+                {_id}
             </td>
             <td>
                 {name}
@@ -18,10 +29,10 @@ const StudentTableRow = (props) =>{
                 {ira}
             </td>
             <td>
-                <Link to={`/EditStudent/${id}`} className="btn btn-warning">Editar</Link>
+                <Link to={`/EditStudent/${_id}`} className="btn btn-warning">Editar</Link>
             </td>
             <td>
-                <Link to={`/EditStudent/${id}`} className="btn btn-danger">Apagar</Link>
+                <button className="btn btn-danger" onClick={deleteStudent}>Apagar</button>
             </td>
         </tr>
     )

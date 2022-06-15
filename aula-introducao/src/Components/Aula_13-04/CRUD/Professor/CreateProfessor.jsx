@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreateProfessor = () => {
 
@@ -6,10 +8,32 @@ const CreateProfessor = () => {
     const [university, setUniversity] = useState("");
     const [degree, setDegree] = useState("");
 
+    const navigate = useNavigate();
+
+    function handleChageName(e){
+        setName(e.target.value);
+    }
+
+    function handleChangeUniversity(e){
+        setUniversity(e.target.value);
+    }
+
+    function handleChangeDegree(e){
+        setDegree(e.target.value);
+    }
+
     const handleSubmit = (event) =>{
-        alert(` Nome: ${name}
-                Universidade: ${university}
-                Título: ${degree}`);
+        //aqui é o código de comunicação com o Backend
+        event.preventDefault();
+        const professor = { name: name, university: university, degree: degree };
+
+        axios.post('http://localhost:3002/professors/create', professor)
+        .then((res)=> {
+            navigate('/ListProfessor', {
+                message: `Cadastro bem sucedido!`,
+            });
+        })
+        .catch((erro) => console.log(erro));
     }
 
     return(
@@ -20,18 +44,18 @@ const CreateProfessor = () => {
                     <label>Nome: </label>
                     <input  type="text"
                             className="form-control"
-                            value={name ?? ""}
+                            value={(name == null || name === undefined) ? "" : name}
                             name="name"
-                            onChange={(event) => setName(event.target.value)}
+                            onChange={handleChageName}
                     />
                 </div>
                 <div className="form-group">
                     <label>Universidade: </label>
                     <input  type="text"
                             className="form-control"
-                            value={university ?? ""}
+                            value={(university == null || university === undefined) ? "" : university}
                             name="university"
-                            onChange={(event) => setUniversity(event.target.value)}
+                            onChange={handleChangeUniversity}
                     />
                 </div>
                 <div className="form-group">
@@ -39,7 +63,8 @@ const CreateProfessor = () => {
                     <input  type="text"
                             className="form-control"
                             value={degree ?? ""}
-                            onChange={(event) => setDegree(event.target.value)}
+                            name="degree"
+                            onChange={handleChangeDegree}
                     />
                 </div>
                 <div className="form-group" style={{paddingTop:10}} >
