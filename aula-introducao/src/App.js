@@ -3,6 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { Routes, Route, Link } from 'react-router-dom';
 import { Dropdown, NavItem, NavLink } from "react-bootstrap";
 
+/*{
 import About from './Components/Atividade_03/About';                                        // Componente da Atividade_03
 import Home from './Components/Atividade_03/Home';                                          // Componente da Atividade_03
 import UFC from "./Components/Atividade_03/CRUD/IMG/UFC_brasao.png";                        // Componente da Atividade_03
@@ -14,6 +15,19 @@ import ListProfessor from './Components/Atividade_03/CRUD/Professor/ListProfesso
 import EditProfessor from './Components/Atividade_03/CRUD/Professor/EditProfessor';         // Componente da Atividade_03
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';                                // Componente da Atividade_03
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';                                // Componente da Atividade_03
+}*/
+
+import About from './Components/Atividade_05/About';                                        // Componente da Atividade_05
+import Home from './Components/Atividade_05/Home';                                          // Componente da Atividade_05
+import UFC from "./Components/Atividade_05/CRUD/IMG/UFC_brasao.png";                        // Componente da Atividade_05
+import CreateStudent from './Components/Atividade_05/CRUD/Student/CreateStudent';           // Componente da Atividade_05
+import EditStudent from './Components/Atividade_05/CRUD/Student/EditStudent';               // Componente da Atividade_05
+import ListStudent from './Components/Atividade_05/CRUD/Student/ListStudent';               // Componente da Atividade_05
+import CreateProfessor from './Components/Atividade_05/CRUD/Professor/CreateProfessor';     // Componente da Atividade_05
+import ListProfessor from './Components/Atividade_05/CRUD/Professor/ListProfessor';         // Componente da Atividade_05
+import EditProfessor from './Components/Atividade_05/CRUD/Professor/EditProfessor';         // Componente da Atividade_05
+import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';                                // Componente da Atividade_05
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';                                // Componente da Atividade_05
 
 //<img src={UFC} alt="Logo Universidade Federal do Ceará"/>
 //Utilizando rotas
